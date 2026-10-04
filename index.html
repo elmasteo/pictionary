@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>Pictionary Familiar</title>
+  <meta name="description" content="Pictionary familiar para jugar en casa.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">PICTIONARY</span>
+        <h1>🎨 Pictionary Familiar</h1>
+      </div>
+      <button id="settingsBtn" class="icon-btn" aria-label="Configuración">⚙️</button>
+    </header>
+
+    <section id="setupScreen" class="screen">
+      <div class="hero-card">
+        <div class="hero-icon">✏️</div>
+        <h2>¡A dibujar!</h2>
+        <p>Elige un tema, una dificultad y empieza a jugar.</p>
+      </div>
+
+      <div class="panel">
+        <label>Tema</label>
+        <div id="categoryGrid" class="choice-grid"></div>
+
+        <label>Dificultad</label>
+        <div id="difficultyGrid" class="choice-grid difficulty"></div>
+
+        <label>Tiempo por ronda</label>
+        <div class="time-row">
+          <button data-time="30">30 s</button>
+          <button data-time="45" class="selected">45 s</button>
+          <button data-time="60">60 s</button>
+          <button data-time="90">90 s</button>
+        </div>
+
+        <button id="startBtn" class="primary-btn">🚀 EMPEZAR</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <div class="game-meta">
+        <button id="backBtn" class="small-btn">← Salir</button>
+        <span id="roundLabel">Ronda 1</span>
+        <button id="newWordBtn" class="small-btn">🔀 Otra</button>
+      </div>
+
+      <div class="timer-wrap">
+        <div id="timer">45</div>
+        <div class="timer-label">SEGUNDOS</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-category" id="wordCategory">ANIMALES</div>
+        <div id="word" class="word">PERRO</div>
+        <div id="difficultyBadge" class="badge">Fácil</div>
+      </div>
+
+      <div class="game-actions">
+        <button id="pauseBtn" class="secondary-btn">⏸ Pausar</button>
+        <button id="doneBtn" class="success-btn">✅ ¡Adivinaron!</button>
+      </div>
+
+      <div id="result" class="result hidden">
+        <div id="resultIcon">🎉</div>
+        <h2 id="resultTitle">¡Bien hecho!</h2>
+        <p id="resultText"></p>
+        <button id="nextBtn" class="primary-btn">Siguiente palabra →</button>
+      </div>
+
+      <div class="tip">💡 El dibujante no puede hablar, escribir letras ni hacer gestos.</div>
+    </section>
+
+    <section id="settingsScreen" class="screen hidden">
+      <div class="panel">
+        <div class="settings-head">
+          <button id="closeSettingsBtn" class="small-btn">← Volver</button>
+          <h2>Configuración</h2>
+        </div>
+        <label>Sonidos</label>
+        <button id="soundBtn" class="toggle-btn">🔊 Sonidos activados</button>
+        <button id="clearBtn" class="danger-btn">Restablecer estadísticas</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

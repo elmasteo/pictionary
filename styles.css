@@ -1,0 +1,75 @@
+:root{
+  --bg:#f4f1ea;
+  --card:#ffffff;
+  --ink:#171717;
+  --muted:#6b7280;
+  --primary:#6d4aff;
+  --primary-dark:#5133d8;
+  --success:#16a34a;
+  --danger:#dc2626;
+  --border:#e7e3dc;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+body{background:radial-gradient(circle at top,#fff 0,#f4f1ea 55%,#ece7dc 100%);min-height:100vh}
+button{font:inherit;cursor:pointer;border:0}
+.app{width:min(720px,100%);margin:auto;padding:18px 16px 34px}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.eyebrow{font-size:.7rem;font-weight:900;letter-spacing:.16em;color:var(--primary)}
+h1{font-size:1.55rem;margin:4px 0 0}
+h2{margin:0}
+.icon-btn,.small-btn{background:#fff;border:1px solid var(--border);border-radius:14px;padding:10px 13px}
+.screen{animation:fade .25s ease}
+.hidden{display:none!important}
+.hero-card{background:linear-gradient(135deg,#17122d,#392b78);color:#fff;border-radius:28px;padding:28px 22px;margin-bottom:16px;box-shadow:0 18px 45px #2c20502b}
+.hero-icon{font-size:3rem;margin-bottom:6px}
+.hero-card h2{font-size:2rem}
+.hero-card p{color:#ddd8f3;margin:8px 0 0}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:20px;box-shadow:0 10px 30px #00000008}
+label{display:block;font-weight:800;font-size:.9rem;margin:4px 0 10px}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:20px}
+.choice-grid button,.time-row button,.toggle-btn{padding:13px 11px;background:#f7f7f7;border:2px solid transparent;border-radius:14px;text-align:left}
+.choice-grid button.selected,.time-row button.selected{background:#eeeaff;border-color:var(--primary);color:var(--primary-dark);font-weight:800}
+.difficulty{grid-template-columns:repeat(3,1fr)}
+.difficulty button{text-align:center}
+.time-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}
+.time-row button{text-align:center}
+.primary-btn,.secondary-btn,.success-btn,.danger-btn{width:100%;padding:15px;border-radius:16px;font-weight:900}
+.primary-btn{background:var(--primary);color:white;box-shadow:0 9px 18px #6d4aff38}
+.primary-btn:hover{background:var(--primary-dark)}
+.secondary-btn{background:#eeeef2}
+.success-btn{background:var(--success);color:white}
+.danger-btn{background:#fee2e2;color:#991b1b;margin-top:16px}
+.game-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.game-meta span{font-weight:800}
+.timer-wrap{text-align:center;margin:4px 0 16px}
+#timer{font-size:4.7rem;font-weight:950;line-height:1;letter-spacing:-.07em}
+.timer-label{font-size:.68rem;letter-spacing:.2em;color:var(--muted);font-weight:900}
+.word-card{text-align:center;background:#fff;border:2px solid var(--border);border-radius:28px;padding:30px 18px;box-shadow:0 12px 32px #0000000b}
+.word-category{font-size:.72rem;letter-spacing:.16em;font-weight:900;color:var(--primary)}
+.word{font-size:clamp(2rem,9vw,4rem);font-weight:950;margin:12px 0;word-break:break-word}
+.badge{display:inline-block;background:#f1f1f1;border-radius:99px;padding:6px 11px;font-size:.75rem;font-weight:800}
+.game-actions{display:grid;grid-template-columns:1fr 1.3fr;gap:9px;margin:14px 0}
+.tip{text-align:center;color:var(--muted);font-size:.78rem;padding:10px 16px}
+.result{text-align:center;background:#fff;border-radius:24px;padding:22px;margin-top:12px;border:2px solid #d8f1df}
+.result>div{font-size:2.7rem}
+.result h2{margin:6px 0}
+.result p{color:var(--muted)}
+.settings-head{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.settings-head h2{font-size:1.3rem}
+.toggle-btn{width:100%;text-align:left;font-weight:800}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#171717;color:white;padding:12px 16px;border-radius:12px;font-weight:700;transition:.2s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:480px){
+  .app{padding:13px 12px 28px}
+  .choice-grid{grid-template-columns:1fr 1fr}
+  .difficulty{grid-template-columns:repeat(3,1fr)}
+  .hero-card{padding:23px 19px}
+  #timer{font-size:4.2rem}
+  .word-card{padding:25px 12px}
+}
+@media(max-width:350px){
+  .time-row{grid-template-columns:1fr 1fr}
+  .game-actions{grid-template-columns:1fr}
+}
