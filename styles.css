@@ -28,7 +28,7 @@ h2{margin:0}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:20px;box-shadow:0 10px 30px #00000008}
 label{display:block;font-weight:800;font-size:.9rem;margin:4px 0 10px}
 .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:20px}
-.choice-grid button,.time-row button,.toggle-btn{padding:13px 11px;background:#f7f7f7;border:2px solid transparent;border-radius:14px;text-align:left}
+.choice-grid button,.time-row button,.toggle-btn{padding:13px 11px;background:#f7f7f7;border:2px solid transparent;border-radius:14px;text-align:left}.choice-grid button{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:center}.choice-grid button small{grid-column:2;color:#8b8b8b;font-size:.68rem;font-weight:600;margin-top:2px}
 .choice-grid button.selected,.time-row button.selected{background:#eeeaff;border-color:var(--primary);color:var(--primary-dark);font-weight:800}
 .difficulty{grid-template-columns:repeat(3,1fr)}
 .difficulty button{text-align:center}
